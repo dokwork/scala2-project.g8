@@ -1,8 +1,8 @@
 lazy val root = (project in file("."))
   .settings(
-	name := "GIVE ME NAME!",
+	name := "$name$",
 	version := "0.1.0-SNAPSHOT",
-	organization := "com.github.dokwork",
+	organization := "$organization$",
 	scalaVersion := "2.12.4",
 	crossScalaVersions := Seq("2.11.11", "2.12.4"),
 	scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
@@ -18,9 +18,9 @@ lazy val root = (project in file("."))
 	pomExtra :=
 	  <developers>
 	    <developer>
-	      <id>dokwork</id>
-	      <name>Vladimir Popov</name>
-	      <url>http://dokwork.ru</url>
+	      <id>$developer_id$</id>
+	      <name>$developer_name$</name>
+	      <url>$developer_url$</url>
 	    </developer>
 	  </developers>
   )
