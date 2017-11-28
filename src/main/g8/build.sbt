@@ -1,9 +1,8 @@
 lazy val root = (project in file("."))
   .settings(
 	name := "$name$",
-	version := "0.1.0-SNAPSHOT",
 	organization := "$organization$",
-	scalaVersion := "2.12.4",
+	scalaVersion := "2.11.11",
 	crossScalaVersions := Seq("2.11.11", "2.12.4"),
 	scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
 	libraryDependencies ++= Seq(
@@ -15,6 +14,8 @@ lazy val root = (project in file("."))
 	  "org.mockito" % "mockito-all" % "1.9.5" % "test",
 	  "ch.qos.logback" % "logback-classic" % "1.1.7" % "test"
 	),
+	releaseCrossBuild := true,
+	licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
 	pomExtra :=
 	  <developers>
 	    <developer>
@@ -23,5 +24,9 @@ lazy val root = (project in file("."))
 	      <url>$developer_url$</url>
 	    </developer>
 	  </developers>
+  )
+	.settings(
+    coverageMinimum := 90,
+    coverageFailOnMinimum := true
   )
 
