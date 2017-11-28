@@ -1,4 +1,4 @@
-lazy val root = (project in file("."))
+lazy val $name;format="word"$ = (project in file("."))
   .settings(
 	name := "$name$",
 	organization := "$organization$",
