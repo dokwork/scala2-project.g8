@@ -11,7 +11,7 @@ lazy val $name;format="word"$ = (project in file("."))
 	  "com.typesafe" % "config" % "1.3.1",
 	  // tests:
 	  "org.scalatest" %% "scalatest" % "3.0.0" % "test",
-	  "org.mockito" % "mockito-all" % "1.9.5" % "test",
+	  "org.mockito" % "mockito-core" % "2.12.0" % "test",
 	  "ch.qos.logback" % "logback-classic" % "1.1.7" % "test"
 	),
 	releaseCrossBuild := true,
