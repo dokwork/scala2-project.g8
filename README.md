@@ -1,6 +1,6 @@
 # scala-project.g8
 
-This is a template for scala projects. It include `.travis.yml` file, some common dependencies like loging, configs and tests and some plugins:
+This is a template for scala projects which includes `.travis.yml` file, some common dependencies like loging, configs and tests and plugins:
 
 * sbt-scoverage
 * sbt-coveralls
