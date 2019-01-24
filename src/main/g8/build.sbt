@@ -1,6 +1,5 @@
-lazy val $name;format="word"$ = (project in file("."))
-  .settings(
-		name := "$name$",
+lazy val $`name`$ = (project in file("."))
+  .settings(		
 		organization := "$organization$",
 		scalaVersion := "$scala_version$",
 		scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ypartial-unification"),
