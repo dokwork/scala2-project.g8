@@ -1,30 +1,23 @@
 lazy val $name;format="word"$ = (project in file("."))
   .settings(
-	name := "$name$",
-	organization := "$organization$",
-	scalaVersion := "2.11.11",
-	crossScalaVersions := Seq("2.11.11", "2.12.4"),
-	scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
-	libraryDependencies ++= Seq(
-	  // typesafe:
-	  "com.typesafe.scala-logging" %% "scala-logging" % "3.7.2",
-	  "com.typesafe" % "config" % "1.3.1",
-	  // tests:
-	  "org.scalatest" %% "scalatest" % "3.0.0" % "test",
-	  "org.mockito" % "mockito-core" % "2.12.0" % "test",
-	  "ch.qos.logback" % "logback-classic" % "1.1.7" % "test"
-	),
-	releaseCrossBuild := true,
-	licenses += ("MIT", url("http://opensource.org/licenses/MIT")),
-	pomExtra :=
-	  <developers>
-	    <developer>
-	      <id>$developer_id$</id>
-	      <name>$developer_name$</name>
-	      <url>$developer_url$</url>
-	    </developer>
-	  </developers>
-  )
+		name := "$name$",
+		organization := "$organization$",
+		scalaVersion := "$scala_version$",
+		scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ypartial-unification"),
+		libraryDependencies ++= Seq(
+			$if(cats.truthy)$
+			"org.typelevel" %% "cats-core" % "1.5.0",
+			$endif$
+			$if(cats_effect.truthy)$
+		  "org.typelevel" %% "cats-effect" % "1.2.0",
+			$endif$
+			$if(fs2.truthy)$
+			"co.fs2" %% "fs2-core" % "1.0.1",
+			$endif$
+			// tests:
+			"org.scalatest" %% "scalatest" % "3.0.0" % "test"
+		)
+ )
 	.settings(
     coverageMinimum := 90,
     coverageFailOnMinimum := true
