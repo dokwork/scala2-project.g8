@@ -1,4 +1,4 @@
-lazy val $`name`$ = (project in file("."))
+lazy val `$name$` = (project in file("."))
   .settings(		
 		organization := "$organization$",
 		scalaVersion := "$scala_version$",
