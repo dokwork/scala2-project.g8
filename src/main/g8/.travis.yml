@@ -3,8 +3,7 @@ sudo: false
 language: scala
 
 scala:
-   - 2.11.11
-   - 2.12.4
+   - $scala_version$
 
 branches:
     - master
@@ -29,8 +28,3 @@ script:
 
 after_success:
   - sbt coverageReport coveralls
-
-notifications:
-  email:
-    recipients:
-      - $developer_email$
