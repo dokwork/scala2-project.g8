@@ -5,13 +5,13 @@ lazy val `$name$` = (project in file("."))
 		scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ypartial-unification"),
 		libraryDependencies ++= Seq(
 			$if(cats.truthy)$
-			"org.typelevel" %% "cats-core" % "1.5.0",
+			"org.typelevel" %% "cats-core" % "$cats_version$",
 			$endif$
 			$if(cats_effect.truthy)$
-		  "org.typelevel" %% "cats-effect" % "1.2.0",
+		  "org.typelevel" %% "cats-effect" % "$cats_effect_version$",
 			$endif$
 			$if(fs2.truthy)$
-			"co.fs2" %% "fs2-core" % "1.0.1",
+			"co.fs2" %% "fs2-core" % "$fs2_version$",
 			$endif$
 			// tests:
 			"org.scalatest" %% "scalatest" % "3.0.0" % "test"
