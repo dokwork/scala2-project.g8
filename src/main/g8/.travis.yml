@@ -21,7 +21,7 @@ before_cache:
   - find \$HOME/.sbt -name "*.lock" -delete
 
 jdk:
-  - oraclejdk8
+  - openjdk11
 
 script:
   - sbt clean coverage test
