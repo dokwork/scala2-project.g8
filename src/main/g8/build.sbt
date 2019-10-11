@@ -2,7 +2,23 @@ lazy val `$name$` = (project in file("."))
   .settings(		
 		organization := "$organization$",
 		scalaVersion := "$scala_version$",
-		scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature", "-Ypartial-unification"),
+		scalacOptions ++= Seq(
+			"-encoding",
+			"utf-8",
+			"-target:jvm-1.8",
+			"-deprecation",
+			"-feature",
+			"-unchecked",
+			"-Xexperimental",
+			"-Xlint",
+			"-Ywarn-adapted-args",
+			"-Ywarn-dead-code",
+			"-Ywarn-inaccessible",
+			"-Ywarn-nullary-override",
+			"-Ywarn-unused",
+			"-Xfatal-warnings",
+			"-language:higherKinds"
+		),
 		libraryDependencies ++= Seq(
 			$if(cats.truthy)$
 			"org.typelevel" %% "cats-core" % "$cats_version$",
@@ -16,9 +32,9 @@ lazy val `$name$` = (project in file("."))
 			// tests:
 			"org.scalatest" %% "scalatest" % "3.0.0" % "test"
 		)
- )
+ 	)
 	.settings(
-    coverageMinimum := 90,
-    coverageFailOnMinimum := true
-  )
+		coverageMinimum := 90,
+		coverageFailOnMinimum := true
+	)
 

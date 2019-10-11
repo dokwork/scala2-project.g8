@@ -10,7 +10,7 @@ Besides it this project depend on some plugins:
 
 * sbt-scoverage
 * sbt-coveralls
-* sbt-release
+* sbt-keepup (sbt-release)
 * sbt-scalafmt
 
 and optionaly on `sbt-bintray`.
