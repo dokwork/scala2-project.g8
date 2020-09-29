@@ -31,6 +31,7 @@ project/plugins/project/
 .ensime_cache/
 .ensime
 
-# Metals
+# Metals & Bloop
+.bloop/
 .metals/
 metals.sbt
