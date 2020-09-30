@@ -34,4 +34,5 @@ project/plugins/project/
 # Metals & Bloop
 .bloop/
 .metals/
+.ammonite/
 metals.sbt
