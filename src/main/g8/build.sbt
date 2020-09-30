@@ -30,7 +30,7 @@ lazy val `$name$` = (project in file("."))
 			"co.fs2" %% "fs2-core" % "$fs2_version$",
 			$endif$
 			// tests:
-			"org.scalatest" %% "scalatest" % "3.0.0" % "test"
+			"org.scalatest" %% "scalatest" % "$scalatest_version" % "test"
 		)
  	)
 	.settings(
