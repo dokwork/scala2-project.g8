@@ -9,12 +9,8 @@ lazy val `$name$` = (project in file("."))
 			"-deprecation",
 			"-feature",
 			"-unchecked",
-			"-Xexperimental",
 			"-Xlint",
-			"-Ywarn-adapted-args",
 			"-Ywarn-dead-code",
-			"-Ywarn-inaccessible",
-			"-Ywarn-nullary-override",
 			"-Ywarn-unused",
 			"-Xfatal-warnings",
 			"-language:higherKinds"
