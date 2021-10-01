@@ -32,6 +32,7 @@ project/plugins/project/
 .ensime
 
 # Metals & Bloop
+.bsp/
 .bloop/
 .metals/
 .ammonite/

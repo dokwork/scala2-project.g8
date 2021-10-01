@@ -13,7 +13,8 @@ lazy val `$name$` = (project in file("."))
 			"-Ywarn-dead-code",
 			"-Ywarn-unused",
 			"-Xfatal-warnings",
-			"-language:higherKinds"
+			"-language:higherKinds",
+      "-Ypartial-unification"
 		),
 		libraryDependencies ++= Seq(
 			$if(cats.truthy)$
@@ -26,9 +27,13 @@ lazy val `$name$` = (project in file("."))
 			"co.fs2" %% "fs2-core" % "$fs2_version$",
 			$endif$
 			// tests:
-			"org.scalatest" %% "scalatest" % "$scalatest_version$" % "test"
+			"org.scalatest" %% "scalatest" % "$scalatest_version$" % "test",
+			$if(cats_effect.truthy)$
+      "org.typelevel" %% "cats-effect-testing-scalatest" % "1.3.0" % "test"
+			$endif$
 		)
  	)
+  .addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1")
 	.settings(
 		coverageMinimum := 90,
 		coverageFailOnMinimum := true
