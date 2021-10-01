@@ -1,9 +1,9 @@
-organization in ThisBuild := "$organization$"
-scalaVersion in ThisBuild := "$scala_version$"
+ThisBuild / organization := "$organization$"
+ThisBuild / scalaVersion := "$scala_version$"
 
-semanticdbEnabled in ThisBuild := true
-semanticdbVersion in ThisBuild := scalafixSemanticdb.revision
-scalafixDependencies in ThisBuild += "com.github.liancheng" %% "organize-imports" % "0.5.0"
+ThisBuild / semanticdbEnabled := true
+ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
+ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.5.0"
 
 lazy val compilerOptions = Seq(
   "-encoding",
@@ -60,6 +60,6 @@ lazy val `$name$` = (project in file("."))
  	  addCompilerPlugin(
       ("org.typelevel" %% "kind-projector" % "0.11.3").cross(CrossVersion.full)
     ),
-		coverageMinimum := 90,
+		coverageMinimumStmtTotal := 90,
 		coverageFailOnMinimum := true
 )
