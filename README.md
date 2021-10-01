@@ -1,4 +1,4 @@
-# scala-project.g8
+# scala2.g8
 
 This is a template for scala2 projects which includes `scalatest` as dependency and some more dependencies for your chose:
 
