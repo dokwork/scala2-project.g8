@@ -16,8 +16,7 @@ lazy val compilerOptions = Seq(
   "-Ywarn-dead-code",
   "-Ywarn-unused",
   "-Xfatal-warnings",
-  "-language:higherKinds",
-  "-Ypartial-unification"
+  "-language:higherKinds"
 )
 
 lazy val dependencies = new {
