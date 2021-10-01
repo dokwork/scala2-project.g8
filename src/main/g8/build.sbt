@@ -27,16 +27,16 @@ lazy val dependencies = new {
 		$endif$
 		$if(cats_effect.truthy)$
     val catsEffect    = "$cats_effect_version$"
-    val stCatsEffect  = "0.3.1"
+    val stCatsEffect  = "1.3.0"
 		$endif$
 		$if(fs2.truthy)$
     val fs2           = "$fs2_version$"
 		$endif$
-    val scalatest     ="$scalatest_version$" 
+    val scalatest     = "$scalatest_version$" 
   }
 
 	$if(cats.truthy)$
-  val cats          = "org.typelevel"     %% "cats-core"       % versions.cats
+  val cats          = "org.typelevel"     %% "cats-core"                     % versions.cats
 	$endif$
 	$if(cats_effect.truthy)$
   val catsEffect    = "org.typelevel"     %% "cats-effect"                   % versions.catsEffect
