@@ -15,7 +15,7 @@ Besides it this project depend on some plugins:
 
 ## How to use it
 1. Install `giter8` as described here: http://www.foundweekends.org/giter8/setup.html
-1. Use it!`g8 dokwork/scala2-project.g8`
+1. Use it!`g8 dokwork/scala2.g8`
 
 
 ## Why it doesn't work with sbt
