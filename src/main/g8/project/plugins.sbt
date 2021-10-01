@@ -4,4 +4,6 @@ addSbtPlugin("org.scoverage" % "sbt-coveralls" % "1.3.1")
 
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "3.0.5")
 
+addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.9.27")
+
 addSbtPlugin("com.github.sbt" % "sbt-release" % "1.1.0")
