@@ -16,8 +16,7 @@ lazy val compilerOptions = Seq(
   "-Ywarn-dead-code",
   "-Ywarn-unused",
   "-Xfatal-warnings",
-  "-language:higherKinds",
-  "-Ypartial-unification"
+  "-language:higherKinds"
 )
 
 lazy val dependencies = new {
@@ -58,7 +57,7 @@ lazy val `$name$` = (project in file("."))
     libraryDependencies ++= dependencies.runtime ++ dependencies.test,
     addCompilerPlugin("com.olegpy" %% "better-monadic-for" % "0.3.1"),
  	  addCompilerPlugin(
-      ("org.typelevel" %% "kind-projector" % "0.11.3").cross(CrossVersion.full)
+      ("org.typelevel" %% "kind-projector" % "0.13.2").cross(CrossVersion.full)
     ),
 		coverageMinimumStmtTotal := 90,
 		coverageFailOnMinimum := true
