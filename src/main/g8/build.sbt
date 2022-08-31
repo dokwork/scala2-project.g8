@@ -46,7 +46,20 @@ lazy val dependencies = new {
 	$endif$
   val scalatest     = "org.scalatest"     %% "scalatest"                     % versions.scalatest
 
-  val runtime = Seq(cats, catsEffect, fs2)
+  val runtime = Seq(
+
+	$if(cats.truthy)$
+  cats, 
+	$endif$
+
+	$if(cats_effect.truthy)$
+  catsEffect, 
+	$endif$
+
+	$if(fs2.truthy)$
+  fs2,
+	$endif$
+  )
   val test    = Seq(scalatest, stCatsEffect).map(_ % "test")
 }
 
