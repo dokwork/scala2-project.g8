@@ -26,10 +26,10 @@ lazy val dependencies = new {
 		$endif$
 		$if(cats_effect.truthy)$
     val catsEffect    = "$cats_effect_version$"
-    val stCatsEffect  = "1.3.0"
+    val stCatsEffect  = "1.4.0"
 		$endif$
 		$if(fs2.truthy)$
-    val fs2           = "$fs2_version$"
+    val fs2           = "$fs2$"
 		$endif$
     val scalatest     = "$scalatest_version$" 
   }
@@ -47,20 +47,14 @@ lazy val dependencies = new {
   val scalatest     = "org.scalatest"     %% "scalatest"                     % versions.scalatest
 
   val runtime = Seq(
-
-	$if(cats.truthy)$
-  cats, 
-	$endif$
-
-	$if(cats_effect.truthy)$
-  catsEffect, 
-	$endif$
-
-	$if(fs2.truthy)$
-  fs2,
-	$endif$
+	$if(cats.truthy)$ cats, $endif$
+	$if(cats_effect.truthy)$ catsEffect, $endif$
+	$if(fs2.truthy)$ fs2, $endif$
   )
-  val test    = Seq(scalatest, stCatsEffect).map(_ % "test")
+  val test    = Seq(
+    scalatest, 
+		$if(cats_effect.truthy)$ stCatsEffect $endif$
+  ).map(_ % "test")
 }
 
 
@@ -72,6 +66,8 @@ lazy val `$name$` = (project in file("."))
  	  addCompilerPlugin(
       ("org.typelevel" %% "kind-projector" % "0.13.2").cross(CrossVersion.full)
     ),
+    $if(for_opensource.truthy)$
 		coverageMinimumStmtTotal := 90,
 		coverageFailOnMinimum := true
+    $endif$
 )

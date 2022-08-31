@@ -1,1 +1,1 @@
-package $organization;format="package"$
+package $organization$
